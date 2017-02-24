@@ -1,0 +1,121 @@
+.mui-card-header{
+	width:100%;
+	position: initial;
+	height: .96rem;
+	background-color: #f9be00;
+}
+.mui-card-header>a:first-child>img{
+	width: 1.73rem;
+	height: .5rem;
+}
+.mui-card-header>a::before{
+	color: #fff;
+	font-size: .55rem;
+}
+section > img{
+	width: 100%;
+	display: block;	
+}
+
+section.mui-content{
+	position: relative;
+}
+section.mui-content>input[type=search]{
+	font-family: "微软雅黑";
+	font-size: .25rem;
+	text-align: left;
+	background-color: #fff;
+	padding-left: .60rem;
+	display: block;
+	width: 75%;
+	height: .627rem;
+	border-radius: .3135rem;
+	border: 1px solid #fabd00;
+	position: absolute;
+	left:1.15rem;
+	top: 2rem;
+}
+section.mui-content>i{
+	display: block;
+	font-size: .5rem;
+	color: #999;
+	position: absolute;
+	left: 1.25rem;
+	top: 2.05rem;
+}
+section.mui-content>#content_top_bottom{
+	display: flex;
+	margin-bottom: 0.2313rem;
+}
+section>#content_top_bottom>li{
+	flex: 1;
+	height: 2.65rem;
+	background-color: #fff;
+	padding: .5rem 0;
+}
+section>#content_top_bottom>li{
+	text-align: center;
+}
+section>#content_top_bottom>li:nth-child(1) img{
+	transform: rotateZ(-90deg);
+}
+section>#content_top_bottom>li a{
+	display: block;
+	height: 100%;	
+}
+section>#content_top_bottom>li:nth-child(2) a{
+	border-left: 2px solid #ddd;	
+}
+section>#content_top_bottom>li img{
+	height: .7rem;
+	width: .65rem;
+}
+section>#content_top_bottom>li p{
+	font-size: .25rem;
+	font-family: "微软雅黑";
+}
+
+/*步骤部分*/
+#steps{
+	background-color: #fff;
+	padding-bottom: .39rem;
+	
+}
+
+#steps p:nth-child(1){
+	height: 1.018rem;
+	line-height: 1.018rem;
+	text-align:center;
+	font-size: .37rem;
+	letter-spacing: .05rem;
+	color: #333;
+}
+#steps img{
+	width: 5.8275rem;
+	margin: 0 auto !important;
+	display: block;
+}
+#steps ul{
+	padding: .2315rem .1rem .3rem .1rem;
+	display: flex;
+	margin: 0 auto .3rem auto;
+}
+#steps ul li{
+	flex: 1;
+	font-size: .30rem;
+	text-align:center;
+	color: #666;
+}
+
+#steps>a{
+	display: block;
+	line-height: .565rem;
+	width:2.5rem;
+	font-size: .25rem;
+	text-align:center;
+	margin:.2435rem auto 0 auto !important;
+	border: 1px solid rgb(249, 190, 0);
+	color: #999;
+	border-radius:.05rem;
+}
+
