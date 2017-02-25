@@ -48,13 +48,15 @@ table {
 a{
 	text-decoration: none;
 }
-html{
+html,body{
 	max-width:740px;
 	min-width: 320px;
 	margin: 0 auto;
 	font-family: "微软雅黑";
-	color: #666;
+	color: #333;
+	background-color: #fff;
 }
+
 
 
 
