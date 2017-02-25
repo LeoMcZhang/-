@@ -1,4 +1,4 @@
-      
+//自适应的调配      
 (function (doc, win) {    
     var docEl = doc.documentElement,    
     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',    
@@ -19,7 +19,21 @@
 	if (!doc.addEventListener) return;    
 	win.addEventListener(resizeEvt, recalc, false);    
 	doc.addEventListener('DOMContentLoaded', recalc, false); 
-	console.log(docEl.clientWidth);
 })(document, window); 
 
+//点击服务切换窗口
+var serBoxNode = document.getElementById('serBox');
+
+function changeH(n){
+	for(var i = 0;i<serBoxNode.children.length;i++){
+		serBoxNode.children[i].style.display = 'none';
+		serBoxNode.children[n].style.display = 'block';
+		if(n == 0){
+			serBoxNode.style.height = "1.8rem";
+		}else{
+			serBoxNode.style.height = "1.5rem";
+		}
+	}
+}
+		
 
