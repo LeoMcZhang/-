@@ -3,11 +3,13 @@ header{
 }
 header>div{
 	display: flex;
-	margin:.25rem 0 ;
+	margin:.27rem 0 ;
 	height: .63rem;
 	position: relative;
 }
-
+header>div>form{
+	flex:5;
+}
 input[type=search]{
     background-color: #fff;
 	border: 1px solid #f9be00;
@@ -19,14 +21,16 @@ input[type=search]{
     font-size: .26rem;
     color:#f9be00;
     padding-left: .6rem;
+    text-align: left;
+    font-family: "微软雅黑";	
+    width: 100%;
 }
-header>#searchBox>input[type=search]{
-	flex:5;
-	width: 77%;
+header>#searchBox>form>input[type=search]{
     border: 1px solid #f9be00;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    transform:translateY(-.5rem);
 }
 header>div::after{
 	content: "";
@@ -42,10 +46,10 @@ header>div::after{
 	background-position: 0 -0.44rem;
 	
 }
-header>div>a{
+header>div#searchBox>a{
 	width: 20%;
-	color: #333;
-	line-height: 0.63rem;
+	color: #666;
+	line-height: 0.65rem;
 	border: 0;
 	font-size: .26rem;
 	text-align: center;
@@ -75,6 +79,28 @@ header>div>a{
 }
 #record>ul{
 	padding:.23rem .2rem;
+	overflow: hidden;
+}
+#record>ul>li{
+	float: left;
+    height: 0.74rem;
+    line-height: 0.74rem;
+    font-size: 0.23rem;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB W3", Helvetica, "Heiti SC", "Droid Sans", Droidsansfallback, sans-serif;
+	box-sizing:boder-box;
+    border-radius: .11rem;
+    background-color: #f5f7fa;
+    padding: 0 .2312rem;
+    margin-right: .28rem;
+    margin-bottom: .23rem;
+    width:auto;
+}
+#record>ul>li>a{
+	color: #666;
 }
 /*热门搜索*/
 #hot{

@@ -8,48 +8,56 @@
     <link rel="stylesheet" href="../css/mui.min.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/vue-resource.js"></script>
 </head>
 
 <body>
-    <header>
-        <div id="searchBox">
-            <input type="search" placehold="输入手机型号" />
-            <a href="selectPark.html">取消</a>
+    <div id="box">
+        <header>
+            <div id="searchBox">
+                <form @submit.prevent="subInfo()">
+                     <input type="search" placeholder="输入手机型号" v-model="text"/>
+                </form>         
+                <a href="selectPark.html">取消</a>
+            </div>
+        </header>
+        <div id="record">
+            <div class="record-title">
+                <p>搜索记录：</p>
+                <a href="javascript:;" @click="clearRecord()">清除</a>
+            </div>
+            <ul>
+                <li v-for="(item,index) in history">
+                    <a href="javascript:;"  v-html="item">                   
+                    </a>
+                </li>
+            </ul>
         </div>
-    </header>
-    <div id="record">
-        <div class="record-title">
-            <p>搜索记录：</p>
-            <a href="javascript:;">清除</a>
+        <div id="hot">
+            <div class="hot-title">
+                <p>热门搜索：</p>
+            </div>
+            <ul>
+                <li>
+                	<span>1</span>
+                	<p>苹果</p>
+                </li>
+                <li>
+                	<span>1</span>
+                	<p>苹果</p>
+                </li>
+                <li>
+                	<span>1</span>
+                	<p>苹果</p>
+                </li>
+                <li>
+                	<span>1</span>
+                	<p>苹果</p>
+                </li>
+            
+            </ul>
         </div>
-        <ul>
-            <li></li>
-        </ul>
-    </div>
-    <div id="hot">
-        <div class="hot-title">
-            <p>搜索记录：</p>
-            <a href="javascript:;">清除</a>
-        </div>
-        <ul>
-            <li>
-            	<span>1</span>
-            	<p>苹果</p>
-            </li>
-            <li>
-            	<span>1</span>
-            	<p>苹果</p>
-            </li>
-            <li>
-            	<span>1</span>
-            	<p>苹果</p>
-            </li>
-            <li>
-            	<span>1</span>
-            	<p>苹果</p>
-            </li>
-        
-        </ul>
     </div>
 </body>
 <script type="text/javascript" src="../js/mui.min.js"></script>
