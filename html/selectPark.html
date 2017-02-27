@@ -8,122 +8,47 @@
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/mui.min.css " />
 		<link rel="stylesheet" href="../css/select.css" />
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script src="../js/vue-resource.js"></script>
 	</head>
 
 	<body>
-		<header class="mui-card-header">
-			<div>
-				<button class="header_btn_active">手机</button>
-				<button>平板</button>
-			</div>
-			<span id="search-label" class="box-to-search">
-				<a href="javascript:;" class="u-to-search"></a>
-			</span>
-		</header>
-		<section class="mui-content">
-			<div class="mui-scroll-wrapper" id="scroll_left">
-				<div class="mui-scroll">
-
-					<ul>
-						<li class="scro-active">1</li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					
-					</ul>
+		<div id="park">
+			<header class="mui-card-header">
+				<div>
+					<div :class="{header_btn_active:!isBtnActive}" @click="init()">手机</div>
+					<div :class="{header_btn_active:isBtnActive}" @click="clickIpadPark()">平板</div>
 				</div>
-			</div>
-			<div class="mui-scroll-wrapper" id="scroll_right">
-				<div class="mui-scroll">
-					<ul>
+				<span>
+					<a href="search.html"></a>
+				</span>
+			</header>
+			<section class="mui-content" id='sectionPark'>
+				<div class="mui-scroll-wrapper" id="scroll_left">
+					<div class="mui-scroll">
 
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">1</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">2</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">1</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">2</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">1</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">2</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">1</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">2</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">1</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="mui-table-view-cell">
-								
-								<p>苹果</p>
-								<span class="mui-badge mui-pull-left">2</span>
-							</a>
-						</li>
-						
-						
-						
-
-					</ul>
+						<ul>
+							<li :class="{ scroActive: isScroActive == index }" v-for='(item,index) in brand' v-html='item' @click="isScroA(index)"></li>					
+						</ul>
+					</div>
 				</div>
-			</div>
+				<div class="mui-scroll-wrapper" id="scroll_right">
+					<div class="mui-scroll">
+						<ul>
 
-		</section>
+							<li v-for="(item,index) in model">
+								<a href="javascript:;" class="mui-table-view-cell">
+									
+									<p>{{item}}</p>
+									<span class="mui-badge mui-pull-left">{{index + 1}}</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+		</div>
 	</body>
 	<script type="text/javascript" src="../js/mui.min.js"></script>
 	<script src="../js/responsive.js" type="text/javascript" charset="utf-8"></script>

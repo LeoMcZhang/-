@@ -42,11 +42,14 @@ header>div::after{
 	background-position: 0 -0.44rem;
 	
 }
-header>div>button{
+header>div>a{
 	width: 20%;
-	height: 0.63rem;
+	color: #333;
+	line-height: 0.63rem;
 	border: 0;
 	font-size: .26rem;
+	text-align: center;
+	cursor: pointer;
 }
 /*搜索记录*/
 

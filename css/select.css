@@ -12,23 +12,24 @@ header.mui-card-header{
 }
 header.mui-card-header>div{
 	width: 3rem;
-    height: .70rem;
-    line-height: .7rem;
     border: 1px solid #f9be00;
     border-radius: 8px;
     display: flex;
     overflow: hidden;
 }
-header.mui-card-header>div>button{
+header.mui-card-header>div>div{
+    height: .70rem;
+    line-height: .7rem;
     padding: 0;
 	flex: 1;
 	border: 0;
 	border-radius: 0;
 	font-size: .25rem;
 	font-family: "微软雅黑";
+	text-align: center;
 	
 }
-header.mui-card-header>div>button.header_btn_active{
+header.mui-card-header>div>div.header_btn_active{
     background-color: #f9be00;
     color: #fff;
 }
@@ -59,7 +60,7 @@ section{
 section>.mui-scroll-wrapper{
 	position: static;
 	overflow: hidden;
-	height: 12rem;
+	height: 11.7rem;
 	background-color: #fff;
 }
 section >.mui-scroll-wrapper>.mui-scroll{
@@ -75,22 +76,27 @@ section>#scroll_right{
 	box-sizing: border-box;
 }
 section>#scroll_left li{
-	height: 1.2rem;
-    line-height: 1.2rem;
+	height: 1.01rem;
+    line-height: 1.01rem;
     border-top: 1px solid #e1e1e1;
     border-right: 1px solid #e1e1e1;
-    font-size: 0.28rem;
+    font-size: 0.32rem;
     color: #333;
     text-align: center;
     background-color: #f5f5f5;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-family: "微软雅黑";
 }
-section>#scroll_left li.scro-active{
+section>#scroll_left li:last-child{
+	 border-bottom: 1px solid #e1e1e1;
+}
+section>#scroll_left li.scroActive{
 	background-color: #fff;
     color: #f9be00;
     border-right-color: #fff;
+    font-size: 0.32rem;
 }
 section>#scroll_right li{
     display: list-item;
@@ -99,9 +105,10 @@ section>#scroll_right li{
 section>#scroll_right li>a {
 	display: block;
 	padding:0;
-    line-height: 1.2rem;
+    line-height: 1.01rem;
+    height: 1.01rem;
     border-top: 1px solid #e1e1e1;
-    font-size: 0.14rem;
+    font-size: 0.32rem;
     color: #666;
     white-space: nowrap;
     text-overflow: ellipsis;
