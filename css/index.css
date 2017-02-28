@@ -1,8 +1,10 @@
+
 .mui-card-header{
 	width:100%;
-	position: initial;
+	position:relative;
 	height: .96rem;
 	background-color: #f9be00;
+	z-index: 1000;
 }
 .mui-card-header>a:first-child>img{
 	width: 1.73rem;
@@ -263,6 +265,50 @@ section{
 	padding-bottom: .5rem;
 }
 
+/*遮罩层*/
+#cover{
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+#cover_list{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: .96rem;
+	width: 100%;
+	z-index: 100;
+	max-width: 7.4rem;
+	background-color: #fff;	
+}
+#cover_list>li{
+	padding:0 .2rem;
+}
+#cover_list>li>a{
+	position: relative;
+	display: block;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.28rem;
+    color: #888;
+    border-bottom: 1px solid #eee;
+    font-family: "微软雅黑";
+}
+#cover_list>li:last-child{
+	overflow: hidden;
+}
 
-
-
+#cover_list>li:last-child>a{
+	width: 2.5rem;
+    height: .67rem;
+    line-height: .67rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0.6rem 0.35rem;
+    float: left;
+}

@@ -26,7 +26,6 @@
 			<section class="mui-content" id='sectionPark'>
 				<div class="mui-scroll-wrapper" id="scroll_left">
 					<div class="mui-scroll">
-
 						<ul>
 							<li :class="{ scroActive: isScroActive == index }" v-for='(item,index) in brand' v-html='item' @click="isScroA(index)"></li>					
 						</ul>
@@ -46,8 +45,11 @@
 						</ul>
 					</div>
 				</div>
-
+				
 			</section>
+			<div id="cover" v-show="isShow">
+				<i :style="{backgroundPositionX: bgP + 'rem'}"></i>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="../js/mui.min.js"></script>

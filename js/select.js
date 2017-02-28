@@ -21,20 +21,24 @@ new Vue({
 		brand:[],
 		isScroActive:0,
 		model:[],
-		isBtnActive:0
+		isBtnActive:0,
+		isShow:0,
+		bgP: -.14
 	},
 	methods:{
 		brandA(){
+			var _this = this ;
 			var URL = 'http://localhost/-/php/brand.php';			
-			this.$http({
+			_this.$http({
 				url:URL
 			}).then(function(res){
-				this.brand = res.data.brand;
+				_this.brand = res.data.brand;
 			});
 		},
 		modelA(brand){
+			var _this = this ;
 			var URLModel = 'http://localhost/-/php/model.php';
-			this.$http({
+			_this.$http({
 				url:URLModel,
 				data:{
 					brand : brand
@@ -43,31 +47,50 @@ new Vue({
 				var arr = [];
 				for(var i=0;i<res.data.length;i++){
 					arr.push(res.data[i][0]);
-					this.model = arr ;
+					_this.model = arr ;
 				}
 			})
 		},			
 		clickIpadPark(){
+			var _this = this ;
 			var URL = 'http://localhost/-/php/brandiPAD.php'			
-			this.$http({
+			_this.$http({
 				url:URL
 			}).then(function(res){
-				this.brand = res.data.brand;
+				_this.brand = res.data.brand;
 			});
-			this.modelA("ipad");
-			this.isBtnActive = 1 ;
+			_this.modelA("ipad");
+			_this.isBtnActive = 1 ;
 		},
 		isScroA(index){
+			var _this = this ;
 			//控制点击后样式变换
-			this.isScroActive = index ;
-			var brand = this.brand[index];
-			this.modelA(brand);
+			_this.isScroActive = index ;
+			//发送请求
+			var brand = _this.brand[index];
+			_this.modelA(brand);
+			//遮罩层
+			_this.isShow = 1;
+			var count = 0 ;
+			var timer = setInterval(function(){
+				count++;
+				_this.bgP = -.14 + -.32*count;
+//				_this.bgP = (.14 + .32*count)*-1
+				if(count==8){
+					_this.isShow = 0;
+					clearInterval(timer)
+				}
+			},100)
+//			setTimeout(function(){
+//				this.isShow = 1;
+//			},1000)
 		},
 		init(){
-			this.isBtnActive = 0 ;
-			this.isScroActive = 0;
-			this.brandA();
-			this.modelA('iphone');
+			var _this = this;
+			_this.isBtnActive = 0 ;
+			_this.isScroActive = 0;
+			_this.brandA();
+			_this.modelA('iphone');
 		}
 	},
 	created:function(){		
@@ -87,4 +110,5 @@ setTimeout(function(){
 		deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 	});
 },500)
+
 

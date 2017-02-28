@@ -1,4 +1,6 @@
-
+#park{
+	position: relative;
+}
 header.mui-card-header{
 	min-height: 1.4rem;
     overflow: hidden;
@@ -68,6 +70,7 @@ section >.mui-scroll-wrapper>.mui-scroll{
 }
 
 section>#scroll_left{
+	height: 11rem;
 	flex:1;
 	box-sizing: border-box;
 }
@@ -144,3 +147,71 @@ section>#scroll_right li:nth-child(3) .mui-badge{
 	background-color: #f9be00;
 	color: #fff;
 }
+/*遮罩层*/
+#cover{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	background-color: rgba(0,0,0,0.3);
+	left: 0;
+	top: 0;
+}
+#cover>i{
+	display: block;
+	position: absolute;
+	content: "";
+	height: .3rem;
+	width: .3rem;
+	background-image: url(../img/mobileicon.png);
+	background-size: 6rem 2.6rem;
+	background-position-y:-1.18rem;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 1000;
+	transform: scale(3);
+}
+/*#cover>i.animate{
+	-webkit-animation: loading 2s forwards infinite steps(8);
+	animation: loading 2s forwards steps(8) infinite ;
+}*/
+/*@-webkit-keyframes loading{
+	0%{
+		background-position: -.14rem -1.18rem;
+	}
+	100%{
+		background-position: -2.24rem -1.18rem;
+	}
+	
+}*/
+/*@keyframes loading{
+	0%{}
+	12.5%{
+		background-position: -.44rem -1.18rem;
+	}
+	25%{
+		background-position: -.74rem -1.18rem;
+	}
+	37.5%{
+		background-position: -1.04rem -1.18rem;
+	}
+	50%{
+		background-position: -1.34rem -1.18rem;
+	}
+	62.5%{
+		background-position: -1.64rem -1.18rem;
+	}
+	75%{
+		background-position: -1.94rem -1.18rem;
+	}
+	87.5%{
+		background-position: 2.24rem -1.18rem;
+	}
+	100%{
+		background-position: -.14rem -1.18rem;
+	}
+	
+}*/

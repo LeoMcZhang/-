@@ -9,7 +9,12 @@ new Vue({
 	methods:{
 		subInfo(){
 			var str = localStorage.getItem('history');
-			var arr = str==''?[]:JSON.parse(str);
+			var arr =[];
+			if(str == '' || str == null){
+				arr = [];
+			}else{
+				arr = JSON.parse(str);
+			}
 			var text = this.text;
 			if(text == ''){
 				return;
@@ -29,13 +34,9 @@ new Vue({
 	},
 	//钩子函数，DOM加载完成
 	created(){
-
 		// var history = localStorage.getItem('history');
-
 		// var arr = history=='' ? []:JSON.parse(history);
-		
 		// this.history = arr ;
-
 		// alert(history=='');	
 		var str = localStorage.getItem('history');
 		var arr = str==''?[]:JSON.parse(str);
